@@ -1,0 +1,43 @@
+﻿<Window x:Class="asmtool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:asmtool"
+        mc:Ignorable="d"
+        Title="Asm Tool" Height="600" Width="1000" MinHeight="300" MinWidth="550">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"></ColumnDefinition>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="0,30,0,0">
+            <ComboBox Margin="20, 10" Name="convertMode" Height="22" SelectedIndex="0" SelectionChanged="convertModeChanged" IsEnabled="False" >
+                <ComboBoxItem Content="asm2hex"/>
+                <ComboBoxItem Content="hex2asm"/>
+            </ComboBox>
+            <ComboBox Height="22" Margin="20,10" Name="archType" SelectionChanged="archTypeChanged" IsEnabled="False" />
+            <ComboBox Margin="20, 10" Name="bitMode" Height="22" SelectedIndex="0" SelectionChanged="bitModeChanged" >
+                <ComboBoxItem Content="32bit"/>
+                <ComboBoxItem Content="64bit"/>
+            </ComboBox>
+        </StackPanel>
+        <DockPanel Grid.Column="1">
+            <Grid DockPanel.Dock="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">asm</Label>
+                <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">hex</Label>
+                <TextBox VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Name="input" Grid.Row="1" Margin="5,5,5,10" TextChanged="inputTextChanged" TextWrapping="WrapWithOverflow"/>
+                <TextBox VerticalScrollBarVisibility="Auto" Name="result" Grid.Row="1" Grid.Column="1" Margin="5,5,10,10" IsReadOnly="True" TextWrapping="Wrap"/>
+            </Grid>
+
+        </DockPanel>
+    </Grid>
+</Window>
