@@ -12,7 +12,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Margin="0,30,0,0">
-            <ComboBox Margin="20, 10" Name="convertMode" Height="22" SelectedIndex="0" SelectionChanged="convertModeChanged" IsEnabled="False" >
+            <ComboBox Margin="20, 10" Name="convertMode" Height="22" SelectedIndex="0" SelectionChanged="convertModeChanged" >
                 <ComboBoxItem Content="asm2hex"/>
                 <ComboBoxItem Content="hex2asm"/>
             </ComboBox>
@@ -32,8 +32,8 @@
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Label HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">asm</Label>
-                <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">hex</Label>
+                <Label HorizontalAlignment="Center" VerticalAlignment="Center" Name="leftDescription" FontSize="24">asm</Label>
+                <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Name="rightDescription" FontSize="24">hex</Label>
                 <TextBox VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Name="input" Grid.Row="1" Margin="5,5,5,10" TextChanged="inputTextChanged" TextWrapping="WrapWithOverflow"/>
                 <TextBox VerticalScrollBarVisibility="Auto" Name="result" Grid.Row="1" Grid.Column="1" Margin="5,5,10,10" IsReadOnly="True" TextWrapping="Wrap"/>
             </Grid>

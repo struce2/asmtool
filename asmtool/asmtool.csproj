@@ -65,8 +65,11 @@
   <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Gee.External.Capstone">
+      <HintPath>.\Gee.External.Capstone.dll</HintPath>
+    </Reference>
     <Reference Include="Keystone.Net">
-      <HintPath>..\..\keystonedemo\keystonedemo\Keystone.Net.dll</HintPath>
+      <HintPath>E:\Users\home\documents\visual studio 2015\Projects\keystonedemo\keystonedemo\Keystone.Net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -142,7 +145,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>Copy "$(ProjectDir)keystone.dll" "$(ProjectDir)$(OutDir)"</PostBuildEvent>
+    <PostBuildEvent>Copy "$(ProjectDir)keystone.dll" "$(ProjectDir)$(OutDir)"
+Copy "$(ProjectDir)capstone.dll" "$(ProjectDir)$(OutDir)"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
